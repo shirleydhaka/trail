@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSakhi - Women's Safety Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">TechSakhi</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#sos">SOS</a></li>
+                    <li><a href="#chat">AI Chat</a></li>
+                    <li><a href="#blockchain">Blockchain</a></li>
+                    <li><a href="children.html">Children</a></li>
+                </ul>
+            </nav>
+            <a href="login.html" id="connectWallet" class="btn">LogIn</a>
+        </div>
+    </header>
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Your Safety, Our Priority</h1>
+            <p>AI and Blockchain powered women's safety platform</p>
+            <div class="cta-buttons">
+                <button id="sosBtn" class="btn primary">Emergency SOS</button>
+                <button class="btn secondary">Build Safety Network</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🆘</div>
+                    <h3>SOS Button</h3>
+                    <p>Instant alert to emergency contacts with your location</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💬</div>
+                    <h3>AI Chat Assistant</h3>
+                    <p>24/7 support and guidance in emergency situations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⛓️</div>
+                    <h3>Blockchain Security</h3>
+                    <p>Immutable incident records for legal protection</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📄</div>
+                    <h3>Legal Reports</h3>
+                    <p>Automatically generated case documentation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sos" class="emergency-section">
+        <div class="container">
+            <h2>Emergency SOS</h2>
+            <div class="sos-panel">
+                <button id="activateSOS" class="sos-button">ACTIVATE SOS</button>
+                <div class="sos-status" id="sosStatus">Status: Ready</div>
+                <div class="location-display" id="locationDisplay">Location: Not available</div>
+                <div class="audio-indicator" id="audioIndicator">Audio: Off</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chat" class="ai-chat">
+        <div class="container">
+            <h2>AI Safety Assistant</h2>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot">Hello! I'm your TechSakhi assistant. How can I help you today?</div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="Type your message...">
+                    <button id="sendMessage">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- real stories -->
+    <section class="real-stories-reporting">
+        <div class="container">
+            <h2>Real Stories, Real Impact</h2>
+            <div class="stories-graph-section" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                <!-- Left Text Content -->
+                <div class="incident-text" style="flex: 1; min-width: 300px;">
+                    <h3>Incident Reporting Saves Lives</h3>
+                    <p><b>Every Dot Tells a Story
+                        Each red pulse is a voice that refused to stay silent.</b><p>
+                            Reporting incidents doesn’t just protect you — it builds a stronger, more alert community.
+                            Together, we can break the silence, raise awareness, and build safer streets — one report at a time.
+                        </p>
+                    <p>Together, we create a safer world — one report at a time.</p>
+                </div>
+
+                <!-- Right Graph Placeholder -->
+                <div class="incident-graph" style="flex: 1; min-width: 300px; position: relative;">
+                    <canvas id="incidentMap" width="500" height="300" style="width: 100%; max-width: 600px; border-radius: 10px;"></canvas>
+                    <!-- You can later replace 'incident-map.png' with an actual graph or canvas/chart -->
+                </div>
+            </div>
+
+            <!-- Real Stories Card -->
+            <div class="real-stories-container">
+                <div class="real-story-card">
+                    <p class="story-text">“I used the SOS button during a late-night emergency. Help arrived in minutes. I’m so grateful for this platform.”</p>
+                    <p class="story-author">— Priya, 24</p>
+                </div>
+                <div class="real-story-card">
+                    <p class="story-text">“When no one believed me, TechSakhi recorded my incident. It gave me the confidence to take legal action.”</p>
+                    <p class="story-author">— Anonymous Survivor</p>
+                </div>
+                <div class="real-story-card">
+                    <p class="story-text">“Knowing my daughter can trigger an alert and share her location instantly gives me peace of mind.”</p>
+                    <p class="story-author">— A Mother</p>
+                </div>
+                <!-- Publish Your Story Section -->
+                <div class="publish-story-section">
+                    <h2 class="section-heading">Publish Your Story</h2>
+                    <p class="section-subtext">Your voice can inspire courage and create change. Share your experience with the TechSakhi community.</p>
+                
+                    <button class="btn publish-btn" id="publishStoryBtn">✍️ Share Your Story</button>
+                
+                    <!-- Hidden Form -->
+                    <div class="story-form-container" id="storyFormContainer">
+                        <form id="storyForm">
+                            <label for="storyText">Your Story <span>*</span></label>
+                            <textarea id="storyText" name="storyText" rows="5" placeholder="Don't worry, we all are there for you..." required></textarea>
+                
+                            <label for="storyAuthor">Your Name</label>
+                            <input type="text" id="storyAuthor" name="storyAuthor" placeholder="We keep your identity hidden..." />
+                
+                            <button type="submit" class="btn submit-story-btn">📤 Submit Story</button>
+                        </form>
+                    </div>
+                </div>                
+            </div>
+            
+        </div>
+    </section>
+
+
+    <section id="blockchain" class="blockchain-section">
+        <div class="container">
+            <h2>Blockchain Security</h2>
+            <div class="blockchain-info">
+                <p>All your incident reports and chat logs are securely stored on the blockchain.</p>
+                <div class="wallet-status" id="walletStatus">Wallet not connected</div>
+                <div class="blockchain-actions">
+                    <button id="logIncident" class="btn">Log Test Incident</button>
+                    <button id="viewLogs" class="btn">View My Logs</button>
+                </div>
+                <!-- Incident Logging Modal -->
+                <div class="modal-overlay" id="incidentModal">
+                    <div class="modal-box">
+                        <span class="close-btn" id="closeModal">&times;</span>
+                        <h3>Log an Incident</h3>
+                        <form id="incidentForm">
+                            <label for="incidentDesc">Incident Description</label>
+                            <textarea id="incidentDesc" required placeholder="Describe the incident..."></textarea>
+
+                            <label for="incidentLocation">Location</label>
+                            <input type="text" id="incidentLocation" placeholder="Auto-detecting..." disabled />
+
+                            <button type="submit" class="btn submit-incident-btn">Submit Report</button>
+                        </form>
+                        <div class="success-msg" id="successMsg">✅ Complaint submitted. Your report has been transferred to the nearest police station.</div>
+                    </div>
+                </div>
+                <div class="logs-display" id="logsDisplay">
+                    <div id="incidentList" class="incident-list">
+                        <!-- Reports will be shown here -->
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TechSakhi. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="blockchain.js"></script>
+</body>
+</html>
